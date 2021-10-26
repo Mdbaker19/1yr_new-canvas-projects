@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fractal Pattern</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<canvas id="canvas" width="1000" height="800"></canvas>
+
+<section id="container">
+    <label>
+        Color
+        <input type="range" id="color" min="1"/>
+    </label>
+
+    <label>
+        Circle / Square
+        <input type="checkbox" id="circle-square" />
+    </label>
+
+    <label>
+        Multiplier
+        <input type="range" id="multiplier" min="1" max="500"/>
+    </label>
+
+    <label>
+        Spacing
+        <input type="range" id="spacing" min="1" max="50"/>
+    </label>
+
+    <label>
+        Size & scale
+        <input type="range" id="scale" min="1"/>
+    </label>
+
+    <label>
+        X Position
+        <input type="range" id="xPosition" min="1" max="799"/>
+    </label>
+
+    <label>
+        Y Position
+        <input type="range" id="yPosition" min="1" max="799"/>
+    </label>
+
+    <div id="directions">
+        <button class="directionButtons" id="up">Up</button>
+        <div id="nested">
+            <button class="directionButtons" id="left">Left</button>
+            <button class="directionButtons" id="right">Right</button>
+        </div>
+        <button class="directionButtons" id="down">Down</button>
+    </div>
+
+</section>
+
+<script src="index.js"></script>
+</body>
+</html>

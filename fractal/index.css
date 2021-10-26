@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    background-color: #343131;
+    color: #c4d6e6;
+}
+
+#canvas {
+    margin: 8px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    align-items: center;
+    justify-content: space-around;
+    height: 50vh;
+    margin-left: 3rem;
+}
+
+#directions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#nested {
+    width: 100%;
+    display: flex;
+}
+
+button {
+    width: 49%;
+    color: #c4d6e6;
+    background-color: #343131;
+}
+
+button:hover {
+    cursor: pointer;
+}
