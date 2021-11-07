@@ -1,6 +1,7 @@
 (() => {
-    const c = document.getElementById('canvas');
-    const cc = c.getContext('2d');
+
+    // import { stuff from util.js } from ../util/util why doesnt this work when module script is added? anyone there ?..
+
     const colorSlide = document.getElementById('color');
     const sizeSlide = document.getElementById('scale');
     const yPosition = document.getElementById('yPosition');
@@ -95,12 +96,6 @@
         recurseCall(startPositionX, startPositionY, color, baseAmount);
     }
 
-    function fill(x, y, w, h, c) {
-        cc.fillStyle = c;
-        cc.fillRect(x, y, w, h);
-    }
-
-
     function recurseCall(x, y, colors, base) {
         circle ? drawCircle(x, y, base, colors): square(x, y, base, base, colors);
         if(base > 2) {
@@ -111,18 +106,6 @@
         }
     }
 
-    function drawCircle(x, y, r, c) {
-        cc.fillStyle = c;
-        cc.beginPath();
-        cc.arc(x, y, r, 0, Math.PI * 2);
-        cc.stroke();
-    }
-
-    function square(x, y, w, h, c) {
-        cc.strokeStyle = c;
-        cc.lineWidth = 1;
-        cc.strokeRect(x, y, w, h);
-    }
 
     function genColorFromRange(range) {
         let out = "rgb(";
