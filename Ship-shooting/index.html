@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Idle canvas game</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <canvas id="game" width="800" height="800"></canvas>
+
+    <label class="white">
+        Difficulty Scale
+        <input type="range" id="diffRange" value="50" min="15" max="350"/>
+    </label>
+
+    <section id="controls">
+        <div>
+            <h2 class="white">Upgrade Points: <span class="white" id="points">0</span></h2>
+            <h2 class="white">Bullet count: <span class="white" id="bulletCount">0</span></h2>
+            <h2 class="white">Ship Health: <span class="white" id="shipHealth"></span></h2>
+        </div>
+        <div>
+            <button class="control-button" id="damage">Damage</button>
+            <button class="control-button" id="bulletRegen">Bullet Regen Speed</button>
+            <button class="control-button" id="speed">Bullet Speed</button>
+            <button class="control-button" id="shipSpeed">Ship Speed</button>
+            <button class="control-button" id="health">Health</button>
+        </div>
+    </section>
+
+<script src="JS/util.js"></script>
+<script src="JS/classes.js"></script>
+<script src="JS/index.js"></script>
+</body>
+</html>
