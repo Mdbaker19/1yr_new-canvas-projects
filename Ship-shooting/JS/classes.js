@@ -175,9 +175,10 @@ function Explosion(x, y) {
 }
 
 
-function EnemyBomb(x, y) {
+function EnemyBomb(x, y, id) {
     this.x = x;
     this.y = y;
+    this.id = id;
 
     this.move = () => {
         this.y += 2;

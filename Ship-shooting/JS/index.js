@@ -27,16 +27,12 @@
     });
 
 
-    // TODO : edit something here to fix the enemy bombs persisting on the screen after the ship is destroyed
-    //  they are also freezing randomly.. seems to be right as a new wave of enemies spawn
     function enemyLogic(enemiesList) {
         enemiesList.forEach(enemy => {
             enemy.show();
             enemy.shotList.forEach(bomb => {
-                if(enemiesList.includes(enemy)) {
-                    if (bomb.move) bomb.move();
-                    bomb.show();
-                }
+                bomb.show();
+                bomb.move();
             });
         });
     }
@@ -66,14 +62,14 @@
         }
         starterShip.enemiesToKill.forEach((enemy, idx) => {
             if(randomEnemiesToShootList.has(idx)) {
-                enemy.shotList.push(new EnemyBomb(enemy.x, enemy.y));
+                enemy.shotList.push(new EnemyBomb(enemy.x, enemy.y, randomIdCreator()));
             }
         });
     }, 3350);
 
     setInterval(load, 50);
 
-    // setInterval(difficultyIncrease, 11700);
+    setInterval(difficultyIncrease, 11150);
 
     setInterval(() => {
         starterShip.bulletCount++;
@@ -83,7 +79,7 @@
         // console.log('Spawning more if you are ready or not!');
         let currEnemies = starterShip.enemiesToKill;
         starterShip.enemiesToKill = [...currEnemies, ...createMoreEnemies()];
-        starterShip.enemiesToKill.forEach(e => e.shotList.forEach(s => s.move++));
+        starterShip.enemiesToKill.forEach(e => e.shotList.forEach(s => s.move()));
     }
 
     function createMoreEnemies() {
